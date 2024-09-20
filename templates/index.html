@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon Master Tool</title>
+</head>
+<body>
+    <h1>Dungeon Master Tool</h1>
+    <form action="/upload_map" method="post" enctype="multipart/form-data">
+        <input type="file" name="map" accept="image/*">
+        <button type="submit">Upload Map</button>
+    </form>
+
+    {% if map %}
+    <div>
+        <h2>Map Preview:</h2>
+        <img src="/static/maps/{{ map }}" alt="Map" style="width: 600px; height: 400px;">
+    </div>
+    {% endif %}
+</body>
+</html>
